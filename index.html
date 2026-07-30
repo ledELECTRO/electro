@@ -90,6 +90,7 @@
     grid-template-columns:2fr 1fr;
     gap:16px;
     padding:20px 5vw 8px;
+    align-items:stretch;
   }
   .promo-tile{
     position:relative;
@@ -147,6 +148,8 @@
 
   @media (max-width:640px){
     .promo-banner{grid-template-columns:1fr;}
+    .promo-tile{aspect-ratio:16/10;}
+    .promo-tile.side{aspect-ratio:16/10;}
   }
 
   /* ---------- Toolbar ---------- */
@@ -450,7 +453,7 @@ const PRODUCTS = [
     description: 'إضاءة LED ذكية بثلاث درجات إضاءة قابلة للتبديل، مزوّدة بمستشعر حركة تلقائي يضيء عند اقترابك، وشحن عبر منفذ Type-C دون الحاجة لأي أسلاك دائمة.',
     image: 'Electro AK3 _ إنارة وديكور_files/photo_2026-07-30_00-23-07.jpg',
     category: 'إنارة',
-    badge: 'ًالأكثر مبيعا',
+    badge: 'الأكثر مبيعًا',
     active: true
   },
   {
@@ -470,7 +473,7 @@ const PRODUCTS = [
     description: 'صاعق كهربائي فعّال للقضاء على الناموس والحشرات الطائرة، بتصميم خفيف وسهل الاستخدام بيد واحدة، ويعمل بشحن Type-C دون الحاجة لبطاريات.',
     image: 'Electro AK3 _ إنارة وديكور_files/photo_2026-07-30_11-04-50.jpg',
     category: 'أدوات منزلية',
-    badge: 'اضيف حديثاً',
+    badge: '',
     active: true
   }
 ];
