@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Electro AK | إنارة وديكور</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#FFFFFF;
@@ -19,11 +19,12 @@
     --line:#EAEAE6;
     --whatsapp:#2FAE60;
     --red:#B4432F;
+    --display-font:'Readex Pro',sans-serif;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal',sans-serif;-webkit-font-smoothing:antialiased;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Arabic',sans-serif;-webkit-font-smoothing:antialiased;}
   a{color:inherit;text-decoration:none;}
-  button{font-family:'Tajawal',sans-serif;}
+  button{font-family:'IBM Plex Sans Arabic',sans-serif;}
 
   /* ---------- Nav ---------- */
   .nav{
@@ -39,7 +40,9 @@
   .brand-mark{height:56px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .brand-mark svg{width:19px;height:19px;}
   .brand-mark img{height:100%;width:auto;object-fit:contain;display:block;}
-  .brand-name{font-family:'Tajawal',sans-serif;font-size:16px;font-weight:700;letter-spacing:0.2px;}
+  .brand-name{font-family:var(--display-font);font-size:16px;font-weight:700;letter-spacing:0.2px;}
+  .brand-label{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:1.5px;color:var(--ink);white-space:nowrap;}
+  .brand-label span{color:var(--brass);padding:0 5px;}
 
   .nav-links{display:flex;gap:22px;font-size:14px;color:var(--ink);font-weight:500;}
   .nav-links a{padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .2s ease;}
@@ -109,7 +112,7 @@
     color:#F1E3C6;font-size:12.5px;font-weight:600;letter-spacing:0.3px;
   }
   .promo-overlay h3{
-    font-family:'Tajawal',sans-serif;font-weight:800;
+    font-family:var(--display-font);font-weight:800;
     font-size:clamp(22px, 3.6vw, 36px);color:#fff;margin:0;line-height:1.35;
   }
   .promo-overlay p{color:#E9E4D8;font-size:13.5px;margin:0;max-width:480px;}
@@ -140,6 +143,53 @@
 
   @media (max-width:640px){
     .promo-carousel{aspect-ratio:auto;min-height:300px;}
+  }
+
+  /* ---------- Winter offer ---------- */
+  .winter-offer{
+    margin:26px 5vw 8px;
+    padding:30px;
+    border-radius:16px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.08), transparent 42%),
+      #101010;
+    color:#fff;
+    box-shadow:0 18px 42px rgba(0,0,0,0.18);
+  }
+  .winter-offer-head{text-align:center;margin-bottom:22px;}
+  .winter-offer-kicker{display:block;color:#D7B878;font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:7px;}
+  .winter-offer h2{font-family:var(--display-font);font-size:clamp(22px,3vw,32px);margin:0 0 5px;font-weight:800;}
+  .winter-offer-subtitle{margin:0;color:#BDBDBD;font-size:13px;}
+  .winter-offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:860px;margin:0 auto;}
+  .winter-product{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;align-items:center;background:#1B1B1B;border:1px solid #343434;border-radius:12px;padding:12px;min-width:0;}
+  .winter-product-media{aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#292929;}
+  .winter-product-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .4s ease;}
+  .winter-product:hover .winter-product-media img{transform:scale(1.06);}
+  .winter-product-info{min-width:0;display:flex;flex-direction:column;gap:7px;}
+  .winter-product-category{color:#D7B878;font-size:10px;font-weight:700;letter-spacing:1px;}
+  .winter-product-name{font-size:16px;font-weight:800;line-height:1.4;}
+  .winter-product-description{color:#A9A9A9;font-size:12px;line-height:1.55;display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .winter-product-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px;}
+  .winter-product-price{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#fff;white-space:nowrap;}
+  .winter-product-old-price{color:#777;text-decoration:line-through;font-size:11px;margin-inline-start:4px;}
+  .winter-release{display:flex;align-items:center;gap:6px;color:#E7C982;font-size:11px;font-weight:700;line-height:1.5;}
+  .winter-release::before{content:'◷';font-size:15px;}
+  .winter-add-btn{padding:8px 11px;border:1px solid #D7B878;border-radius:7px;background:#D7B878;color:#171717;font-size:11px;font-weight:800;cursor:pointer;white-space:nowrap;transition:filter .2s ease;}
+  .winter-add-btn:hover{filter:brightness(1.1);}
+  .winter-add-btn.added{background:#2FAE60;border-color:#2FAE60;color:#fff;}
+  .winter-add-btn.reminder{background:transparent;border-color:#71898F;color:#F7F3E9;}
+  .winter-add-btn.reminder.active{background:#2FAE60;border-color:#2FAE60;color:#fff;}
+  @media (max-width:760px){
+    .winter-offer{padding:22px 14px;}
+    .winter-offer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+    .winter-product{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:8px;}
+    .winter-product-media{width:100%;}
+    .winter-product-info{gap:5px;}
+    .winter-product-name{font-size:13px;}
+    .winter-product-description{display:none;}
+    .winter-product-foot{display:block;margin-top:3px;}
+    .winter-product-price{font-size:11px;margin-bottom:7px;}
+    .winter-add-btn{width:100%;padding:7px 5px;font-size:10px;}
   }
 
   /* ---------- Toolbar ---------- */
@@ -173,6 +223,7 @@
   .card{
     background:var(--surface);border:1px solid var(--line);border-radius:16px;
     overflow:hidden;display:flex;flex-direction:column;
+    position:relative;
     transition:transform .25s ease, box-shadow .25s ease;
   }
   .card:hover{transform:translateY(-3px);box-shadow:0 16px 36px -20px rgba(0,0,0,0.18);}
@@ -202,12 +253,13 @@
 
   .card-body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:5px;flex:1;}
   .card-cat{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;}
-  .card-name{font-family:'Tajawal',sans-serif;font-size:15.5px;font-weight:700;line-height:1.35;}
+  .card-name{font-family:var(--display-font);font-size:15.5px;font-weight:700;line-height:1.35;}
   .card-desc{font-size:12.5px;color:var(--muted);line-height:1.6;flex:1;}
   .card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px;}
   .card-price-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
   .card-price{font-family:'IBM Plex Mono',monospace;font-size:14.5px;font-weight:600;}
   .card-old-price{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-decoration:line-through;}
+  .coming-soon-promo{color:var(--brass-deep);font-size:12.5px;font-weight:700;line-height:1.45;}
   .add-btn{
     display:flex;align-items:center;gap:6px;
     padding:8px 13px;border-radius:8px;
@@ -216,9 +268,130 @@
     transition:background .2s ease;
   }
   .add-btn:hover{background:var(--brass-deep);}
+  .add-btn:disabled{background:var(--brass-soft);color:var(--brass-deep);cursor:default;}
   .add-btn.added{background:var(--whatsapp);}
+  .card.featured-product{border:2px solid #B4791F;box-shadow:0 10px 26px rgba(180,121,31,.16);}
+  .card.featured-product::before{content:'اختيار مميز';position:absolute;top:0;right:0;z-index:2;padding:6px 12px;background:#B4791F;color:#fff;border-radius:0 0 0 9px;font-size:10px;font-weight:800;}
+  .card.featured-product .card-media .card-badge{top:42px;right:12px;}
+  .card.featured-product .card-media{background:#F4E7C9;}
+  .card.featured-product .card-name{color:#8F5F16;font-size:17px;}
+  .card.featured-product .card-cat{color:#A06D18;}
 
   .empty-state{text-align:center;color:var(--muted);padding:60px 20px;border:1px dashed var(--line);border-radius:14px;font-size:14px;grid-column:1/-1;}
+
+  /* ---------- Product details ---------- */
+  .detail-page{padding:46px 5vw 90px;max-width:1180px;margin:0 auto;}
+  body.detail-mode{background:#070707;color:#F7F2E9;min-height:100vh;}
+  body.detail-mode .nav{background:rgba(7,7,7,0.9);border-color:#29251F;color:#F7F2E9;}
+  body.detail-mode .nav-links{color:#F7F2E9;}
+  body.detail-mode .nav-links a:hover, body.detail-mode .nav-links a.active{border-color:#D7B878;}
+  body.detail-mode .lang-toggle, body.detail-mode .icon-btn svg{color:#F7F2E9;stroke:#F7F2E9;}
+  body.detail-mode footer{background:#070707;border-color:#29251F;color:#8F8A82;}
+  body.detail-mode .brand-name{color:#F7F2E9;}
+  body.detail-mode .brand-label{color:#F7F2E9;}
+  .detail-page{position:relative;isolation:isolate;overflow:hidden;min-height:calc(100vh - 90px);}
+  .winter-intro,.winter-intro h1,.winter-intro p,.winter-offer,.winter-detail-banner,.detail-page{font-family:'Noto Kufi Arabic','Tajawal',sans-serif;}
+  .detail-page::before{content:'';position:absolute;z-index:-1;inset:0 -30vw;background:radial-gradient(circle at 18% 22%,rgba(188,145,67,.18),transparent 28%),radial-gradient(circle at 86% 72%,rgba(116,78,24,.14),transparent 26%),repeating-linear-gradient(135deg,rgba(255,255,255,.018) 0 1px,transparent 1px 7px);pointer-events:none;}
+  .winter-snow{position:absolute;z-index:0;inset:0;overflow:hidden;pointer-events:none;}
+  .winter-snow i{position:absolute;top:-10%;left:var(--snow-left);width:var(--snow-size);height:var(--snow-size);border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 0 9px rgba(255,255,255,.75);animation:snowFall var(--snow-duration) linear infinite;animation-delay:var(--snow-delay);}
+  @keyframes snowFall{from{transform:translate3d(0,-60px,0) rotate(0deg);}to{transform:translate3d(var(--snow-drift),115vh,0) rotate(360deg);}}
+  .detail-page > :not(.winter-snow){position:relative;z-index:1;}
+  .winter-detail-banner{position:relative;width:100vw;max-width:none;min-height:88px;margin:0 calc(50% - 50vw) 34px;overflow:hidden;border-top:1px solid rgba(201,160,78,.55);border-bottom:1px solid rgba(201,160,78,.55);background:linear-gradient(105deg,#F7F1E4 0%,#FFFFFF 28%,#EAF4F5 52%,#FFFFFF 75%,#F4E9D3 100%);box-shadow:0 16px 32px rgba(182,150,91,.16),inset 0 1px rgba(255,255,255,.9),inset 0 -1px rgba(177,139,64,.18);}
+  .winter-detail-banner::before{content:'';position:absolute;z-index:2;inset:0;width:28%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.78) 48%,transparent 100%);transform:translateX(-140%);animation:winterBannerShine 8s ease-in-out infinite;pointer-events:none;}
+  .winter-detail-banner::after{content:'❄';position:absolute;right:7%;top:50%;z-index:2;color:rgba(180,121,31,.38);font-size:42px;transform:translateY(-50%) rotate(18deg);pointer-events:none;}
+  .winter-detail-track{position:relative;z-index:1;display:flex;align-items:center;justify-content:flex-start;width:max-content;min-width:100%;height:88px;animation:winterBannerMove 22s linear infinite;}
+  .winter-detail-track span{display:inline-flex;align-items:center;gap:28px;padding:0 38px;color:#4A5360;font-size:14px;font-weight:800;letter-spacing:.4px;white-space:nowrap;text-shadow:0 1px 0 rgba(255,255,255,.8);}
+  .winter-detail-track span::after{content:'✦';color:#B4791F;font-size:15px;}
+  .winter-detail-banner:hover .winter-detail-track{animation-play-state:paused;}
+  @keyframes winterBannerMove{from{transform:translateX(0);}to{transform:translateX(38%);}}
+  @keyframes winterBannerShine{0%,45%{transform:translateX(-140%);}70%,100%{transform:translateX(440%);}}
+  @media (prefers-reduced-motion:reduce){.winter-detail-track{animation:none;justify-content:center;}.winter-detail-banner::before,.winter-snow i{animation:none;}}
+  .back-link{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:13px;font-weight:700;margin-bottom:24px;}
+  body.detail-mode .back-link{color:#B8B0A3;}
+  body.detail-mode .back-link:hover{color:#D7B878;}
+  .back-link:hover{color:var(--ink);}
+  .back-link svg{width:17px;height:17px;}
+  .detail-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:46px;align-items:start;}
+  .detail-media{background:#141311;border:1px solid #3B3225;border-radius:18px;overflow:hidden;aspect-ratio:1/1;position:relative;box-shadow:0 28px 70px rgba(0,0,0,.46);}
+  .detail-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .detail-media::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,220,150,.12),transparent 32%,rgba(0,0,0,.28));pointer-events:none;}
+  .detail-media .card-badge{top:18px;right:18px;font-size:12px;padding:8px 15px;}
+  .detail-copy{padding:28px 0 0;}
+  .detail-category{font-size:12px;color:#D7B878;font-weight:700;letter-spacing:2px;margin-bottom:12px;}
+  .detail-copy h1{font-family:var(--display-font);font-size:clamp(26px,4vw,42px);line-height:1.25;margin:0 0 14px;font-weight:800;}
+  body.detail-mode .detail-description{color:#B8B0A3;}
+  .detail-description{font-size:15px;line-height:1.9;margin:0 0 22px;}
+  .detail-price{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:#D7B878;margin-bottom:22px;}
+  .detail-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .detail-qty{display:flex;align-items:center;gap:12px;border:1px solid #4A3D29;border-radius:9px;padding:5px 8px;color:#F7F2E9;}
+  .detail-qty button{width:27px;height:27px;border:0;border-radius:6px;background:#2A241B;color:#D7B878;font-size:18px;cursor:pointer;}
+  .detail-qty span{min-width:20px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+  .detail-wish,.detail-share{height:43px;width:43px;border:1px solid #4A3D29;border-radius:9px;background:transparent;color:#D7B878;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .detail-wish svg,.detail-share svg{width:19px;height:19px;stroke:currentColor;}
+  .detail-wish.active{background:#D7B878;color:#15110B;}
+  .detail-page .add-btn{padding:12px 20px;font-size:13px;background:#D7B878;color:#15110B;}
+  .detail-page .add-btn:hover{background:#F0D29A;}
+  .detail-perks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:30px;padding-top:20px;border-top:1px solid #312A20;}
+  .detail-perk{font-size:11px;line-height:1.6;color:#AFA79A;}
+  .detail-perk strong{display:block;color:#F7F2E9;font-size:12px;margin-bottom:2px;}
+  .detail-video{margin-top:38px;}
+  .detail-video h2{font-size:18px;margin:0 0 13px;color:#F7F2E9;}
+  .detail-video video{display:block;width:100%;max-height:520px;border-radius:14px;background:#111;}
+  .video-empty{border:1px dashed #4A3D29;border-radius:14px;padding:34px 20px;text-align:center;color:#AFA79A;font-size:13px;line-height:1.8;background:#11100E;}
+  .coming-soon-note{display:inline-flex;background:var(--brass-soft);color:var(--brass-deep);padding:9px 14px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:20px;}
+  .detail-page .add-btn{padding:12px 20px;font-size:13px;}
+  .winter-activity{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;margin:0 auto 34px;padding:14px 18px 17px;max-width:1180px;border:1px solid rgba(215,184,120,.48);border-radius:14px;background:linear-gradient(100deg,rgba(215,184,120,.14),rgba(255,255,255,.035) 46%,rgba(113,161,181,.12));box-shadow:0 12px 30px rgba(0,0,0,.2);}
+  .winter-activity-status{display:flex;align-items:center;gap:8px;color:#E7C982;font-size:12px;font-weight:800;white-space:nowrap;}
+  .winter-activity-status i{width:8px;height:8px;border-radius:50%;background:#65D39A;box-shadow:0 0 0 5px rgba(101,211,154,.14);animation:activityPulse 1.8s ease-in-out infinite;}
+  .winter-activity-message{color:#D5D0C6;font-size:12px;line-height:1.6;transition:opacity .18s ease;}
+  .winter-activity-items{display:flex;gap:6px;justify-content:flex-end;}
+  .winter-activity-items button{border:1px solid #584A32;border-radius:999px;padding:7px 10px;background:rgba(0,0,0,.16);color:#BDB5A8;font-size:10px;cursor:pointer;transition:all .2s ease;white-space:nowrap;}
+  .winter-activity-items button:hover,.winter-activity-items button.active{border-color:#D7B878;background:#D7B878;color:#17120B;}
+  .winter-activity-progress{position:absolute;right:18px;bottom:6px;left:18px;height:2px;overflow:hidden;border-radius:99px;background:rgba(255,255,255,.12);}
+  .winter-activity-progress span{display:block;width:42%;height:100%;border-radius:inherit;background:#D7B878;animation:activityProgress 5s ease-in-out infinite;}
+  @keyframes activityPulse{50%{opacity:.45;transform:scale(.75);}}
+  @keyframes activityProgress{0%,100%{transform:translateX(-20%);opacity:.55;}50%{transform:translateX(150%);opacity:1;}}
+  .winter-lower{margin-top:42px;padding-top:28px;border-top:1px solid #30291F;}
+  .winter-deal-strip{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 18px;margin-bottom:22px;border:1px solid #5C4828;border-radius:12px;background:linear-gradient(100deg,#1A1712,#282116 55%,#151310);}
+  .winter-deal-label{color:#E7C982;font-size:12px;font-weight:700;}
+  .winter-deal-label small{display:block;color:#AFA79A;font-size:10px;font-weight:400;margin-top:4px;}
+  .winter-countdown{display:flex;direction:ltr;gap:6px;}
+  .winter-countdown b{min-width:40px;padding:7px 5px;border-radius:6px;background:#0D0D0C;color:#F7F2E9;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:15px;}
+  .winter-countdown span{align-self:center;color:#D7B878;font-weight:700;}
+  .winter-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;}
+  .winter-benefit{padding:15px;border:1px solid #29251F;border-radius:10px;background:rgba(255,255,255,.025);}
+  .winter-benefit b{display:block;color:#F7F2E9;font-size:12px;margin-bottom:5px;}
+  .winter-benefit span{color:#AFA79A;font-size:11px;line-height:1.7;}
+  .winter-accordion{border-top:1px solid #30291F;}
+  .winter-accordion button{display:flex;justify-content:space-between;width:100%;padding:15px 2px;border:0;border-bottom:1px solid #30291F;background:transparent;color:#F7F2E9;font-family:inherit;font-size:13px;font-weight:700;text-align:right;cursor:pointer;}
+  .winter-accordion button::after{content:'+';color:#D7B878;font-size:18px;line-height:1;}
+  .winter-accordion button.open::after{content:'−';}
+  .winter-accordion p{display:none;margin:0;padding:0 2px 15px;color:#AFA79A;font-size:12px;line-height:1.9;}
+  .winter-accordion p.open{display:block;}
+  .winter-related{margin-top:28px;}
+  .winter-related h2{margin:0 0 14px;color:#F7F2E9;font-size:17px;}
+  .winter-related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .winter-related-card{display:flex;align-items:center;gap:10px;padding:9px;border:1px solid #332B20;border-radius:10px;background:#11100E;cursor:pointer;transition:border-color .2s,transform .2s;}
+  .winter-related-card:hover{border-color:#D7B878;transform:translateY(-2px);}
+  .winter-related-card img{width:58px;height:58px;border-radius:7px;object-fit:cover;background:#24211C;}
+  .winter-related-card b{display:block;color:#F7F2E9;font-size:12px;margin-bottom:4px;}
+  .winter-related-card span{color:#D7B878;font-family:'IBM Plex Mono',monospace;font-size:11px;}
+  .winter-buy-bar{position:sticky;bottom:14px;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:28px;padding:12px 14px;border:1px solid rgba(215,184,120,.65);border-radius:12px;background:rgba(19,17,14,.94);box-shadow:0 12px 35px rgba(0,0,0,.4);backdrop-filter:blur(12px);}
+  .winter-buy-bar strong{display:block;color:#F7F2E9;font-size:12px;}
+  .winter-buy-bar span{color:#D7B878;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+  .winter-buy-bar button{border:0;border-radius:8px;padding:11px 18px;background:#D7B878;color:#17120B;font-family:inherit;font-size:12px;font-weight:800;cursor:pointer;}
+  .winter-buy-bar button:hover{background:#F0D29A;}
+  @media (max-width:760px){
+    .detail-page{padding-top:28px;}
+    .detail-layout{grid-template-columns:1fr;gap:24px;}
+    .detail-copy{padding-top:0;}
+    .detail-perks{grid-template-columns:1fr;gap:10px;}
+    .winter-activity{grid-template-columns:1fr;gap:10px;padding:14px;}
+    .winter-activity-items{justify-content:flex-start;flex-wrap:wrap;}
+    .winter-deal-strip{align-items:flex-start;flex-direction:column;}
+    .winter-benefits,.winter-related-grid{grid-template-columns:1fr;}
+    .winter-buy-bar{bottom:8px;}
+  }
 
   /* ---------- Cart drawer ---------- */
   .cart-overlay{
@@ -236,7 +409,7 @@
   }
   .cart-drawer.open{transform:translateX(0);}
   .cart-head{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line);}
-  .cart-head h3{font-family:'Tajawal',sans-serif;font-size:18px;margin:0;}
+  .cart-head h3{font-family:var(--display-font);font-size:18px;margin:0;}
   .close-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center;}
   .cart-items{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px;}
   .cart-item{display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px;}
@@ -265,12 +438,125 @@
   @media (max-width:760px){
     .nav-links{display:none;}
   }
+  .winter-intro{position:relative;min-height:310px;margin:0;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:#F8F2E7;background:radial-gradient(circle at 50% 15%,rgba(198,160,87,.24),transparent 24%),linear-gradient(115deg,#08131D 0%,#10283A 48%,#071018 100%);border-bottom:1px solid rgba(215,184,120,.42);isolation:isolate;}
+  .winter-intro::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(112deg,transparent 0 58px,rgba(255,255,255,.045) 59px,transparent 60px 118px);opacity:.5;animation:winterAtmosphere 18s linear infinite;z-index:-1;}
+  .winter-intro::after{content:'✦   ❄   ✦   ❄   ✦';position:absolute;top:24px;left:50%;width:100%;transform:translateX(-50%);color:rgba(255,255,255,.42);font-size:18px;letter-spacing:28px;white-space:nowrap;animation:winterSparkle 4s ease-in-out infinite;z-index:-1;}
+  .winter-intro-content{position:relative;z-index:1;max-width:680px;padding:34px 20px;}
+  .winter-welcome-mark{display:inline-flex;align-items:center;gap:10px;margin-bottom:15px;padding:8px 14px;border:1px solid rgba(231,201,130,.5);border-radius:999px;background:rgba(255,255,255,.07);color:#F4D995;font-size:11px;font-weight:700;box-shadow:0 8px 22px rgba(0,0,0,.16);}
+  .winter-welcome-mark::before{content:'❄';font-size:17px;animation:winterSparkle 3s ease-in-out infinite;}
+  .winter-intro h1{position:relative;}
+  .winter-intro h1::after{content:'';display:block;width:76px;height:2px;margin:15px auto 0;background:linear-gradient(90deg,transparent,#E7C982,transparent);}
+  .winter-intro-kicker{display:inline-flex;align-items:center;gap:9px;color:#E7C982;font-size:11px;font-weight:700;letter-spacing:3px;margin-bottom:12px;}
+  .winter-intro-kicker::before,.winter-intro-kicker::after{content:'';width:30px;height:1px;background:#B4791F;}
+  .winter-intro h1{margin:0;font-family:var(--display-font);font-size:clamp(28px,5vw,52px);line-height:1.2;font-weight:800;text-shadow:0 8px 25px rgba(0,0,0,.38);}
+  .winter-intro p{margin:12px auto 20px;color:#C9D4DA;font-size:14px;line-height:1.8;max-width:500px;}
+  .winter-intro-cta{border:1px solid #E7C982;border-radius:999px;background:#E7C982;color:#13202A;padding:11px 24px;font-size:13px;font-weight:800;cursor:pointer;box-shadow:0 9px 24px rgba(0,0,0,.22);transition:transform .2s ease,background .2s ease;}
+  .winter-intro-cta:hover{background:#FFF0BC;transform:translateY(-2px);}
+  .winter-intro-note{display:block;margin-top:12px;color:#8FA4B0;font-size:11px;}
+  @keyframes winterAtmosphere{from{transform:translateX(-70px);}to{transform:translateX(70px);}}
+  @keyframes winterSparkle{0%,100%{opacity:.3;}50%{opacity:.85;}}
+  @media (prefers-reduced-motion:reduce){.winter-intro::before,.winter-intro::after{animation:none;}}
   @media (max-width:600px){
     .grid{grid-template-columns:repeat(2, 1fr);gap:12px;}
     .card-body{padding:10px 10px 12px;}
     .card-name{font-size:13.5px;}
     .card-desc{display:none;}
     .add-btn{padding:7px 10px;font-size:11px;}
+  }
+
+  /* ---------- Seasonal storefront ---------- */
+  body.winter-season-mode{background:#F4F6F5;color:#17252B;}
+  body.winter-season-mode .nav{background:rgba(8,25,34,.96);border-color:#28414A;color:#F7F3E9;}
+  body.winter-season-mode .brand-label,body.winter-season-mode .nav-links,body.winter-season-mode .lang-toggle{color:#F7F3E9;}
+  body.winter-season-mode .nav-links a:hover,body.winter-season-mode .nav-links a.active{border-color:#E7C982;}
+  body.winter-season-mode .icon-btn svg{stroke:#F7F3E9;}
+  body.winter-season-mode .toolbar{background:#F4F6F5;}
+  body.winter-season-mode .filters{padding-top:4px;}
+  body.winter-season-mode .filter-btn{background:#fff;border-color:#D8E0E1;}
+  body.winter-season-mode .filter-btn.active,body.winter-season-mode .filter-btn:hover{background:#102D38;border-color:#102D38;color:#fff;}
+  .season-announcement{display:flex;align-items:center;justify-content:center;gap:18px;min-height:36px;padding:8px 5vw;background:#D7B878;color:#12222A;font-size:12px;font-weight:800;text-align:center;}
+  .season-announcement strong{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;}
+  .season-announcement button{border:0;border-bottom:1px solid currentColor;background:none;color:inherit;font:inherit;cursor:pointer;padding:0;}
+  .winter-hub{margin:0 5vw 24px;padding:22px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:22px;background:#102D38;color:#F7F3E9;border-radius:0 0 18px 18px;box-shadow:0 18px 34px rgba(16,45,56,.16);}
+  .winter-hub-copy{display:flex;flex-direction:column;justify-content:center;padding:8px 10px;}
+  .winter-hub-kicker{color:#E7C982;font-size:11px;font-weight:800;letter-spacing:2px;}
+  .winter-hub h2{max-width:590px;margin:10px 0 8px;font-family:var(--display-font);font-size:clamp(26px,4vw,48px);line-height:1.25;}
+  .winter-hub-copy p{max-width:520px;margin:0;color:#C5D3D6;font-size:13px;line-height:1.8;}
+  .winter-hub-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px;}
+  .winter-hub-actions button{padding:10px 15px;border:1px solid #E7C982;border-radius:8px;background:#E7C982;color:#12222A;font-size:12px;font-weight:800;cursor:pointer;}
+  .winter-hub-actions button.alt{background:transparent;color:#F7F3E9;border-color:#71898F;}
+  .winter-hub-panel{display:flex;flex-direction:column;justify-content:space-between;gap:14px;padding:18px;border:1px solid #48636B;border-radius:12px;background:linear-gradient(145deg,#183E4B,#0A202A);}
+  .winter-hub-panel h3{margin:0;font-size:14px;color:#F7F3E9;}
+  .season-countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;direction:ltr;}
+  .season-countdown div{padding:10px 4px;background:#081A22;border:1px solid #2E505A;border-radius:7px;text-align:center;}
+  .season-countdown b{display:block;color:#E7C982;font-family:'IBM Plex Mono',monospace;font-size:20px;}
+  .season-countdown span{display:block;margin-top:3px;color:#A9BDC0;font-size:9px;}
+  .season-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 5vw 26px;}
+  .season-choice{min-height:98px;padding:15px;border:1px solid #D9E1E1;border-radius:10px;background:#fff;text-align:right;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;}
+  .season-choice:hover{transform:translateY(-3px);border-color:#B4791F;box-shadow:0 12px 24px rgba(16,45,56,.1);}
+  .season-choice b{display:block;margin-bottom:7px;color:#17333D;font-size:14px;}
+  .season-choice span{color:#687B80;font-size:11px;line-height:1.6;}
+  .season-choice i{display:block;margin-bottom:9px;color:#B4791F;font-size:19px;font-style:normal;}
+  body.winter-season-mode .card{border-color:#D9E1E1;border-radius:10px;box-shadow:0 6px 18px rgba(16,45,56,.05);}
+  body.winter-season-mode .card:hover{box-shadow:0 16px 30px rgba(16,45,56,.14);}
+  body.winter-season-mode .card-badge{background:#17333D;}
+  @media (max-width:760px){
+    .season-announcement{gap:8px;font-size:10px;}
+    .winter-hub{grid-template-columns:1fr;margin:0 0 18px;border-radius:0;padding:18px 5vw;}
+    .winter-hub h2{font-size:28px;}
+    .season-choices{margin:0 5vw 20px;gap:7px;}
+    .season-choice{min-height:116px;padding:10px;}
+    .season-choice b{font-size:12px;}
+  }
+
+  /* Winter storefront refinement */
+  body.winter-season-mode{background:#F6F7F7;color:#17252B;}
+  body.winter-season-mode .nav{background:rgba(255,255,255,.96);border-color:#DDE4E5;color:#17252B;}
+  body.winter-season-mode .brand-label,body.winter-season-mode .nav-links,body.winter-season-mode .lang-toggle{color:#17252B;}
+  body.winter-season-mode .nav-links a:hover,body.winter-season-mode .nav-links a.active{border-color:#173B49;}
+  body.winter-season-mode .icon-btn svg{stroke:#17252B;}
+  .season-announcement{background:#173B49;color:#F6F1E4;}
+  .season-announcement strong{color:#E7C982;}
+  .winter-intro{min-height:270px;justify-content:flex-start;text-align:right;padding:0 7vw;background:linear-gradient(110deg,#E8F0F0 0%,#F8F7F1 58%,#E8EFF1 100%);color:#173B49;border-bottom:1px solid #D7E0E1;}
+  .winter-intro::before{background:linear-gradient(120deg,transparent 0 32%,rgba(255,255,255,.7) 33% 34%,transparent 35% 100%);opacity:.8;}
+  .winter-intro::after{color:rgba(23,59,73,.18);left:12%;top:30px;text-align:left;}
+  .winter-intro-content{max-width:620px;padding:34px 0;align-items:flex-start;text-align:right;}
+  .winter-welcome-mark{margin-bottom:12px;padding:6px 11px;border-color:#B9CBCD;background:#fff;color:#173B49;box-shadow:none;}
+  .winter-intro-kicker{color:#A06D18;letter-spacing:1.5px;}
+  .winter-intro-kicker::before,.winter-intro-kicker::after{display:none;}
+  .winter-intro h1{color:#173B49;font-size:clamp(25px,4vw,43px);text-shadow:none;}
+  .winter-intro h1::after{margin:12px 0 0;width:54px;background:#C18A2D;}
+  .winter-intro p{margin:11px 0 17px;color:#52666B;line-height:1.75;}
+  .winter-intro-cta{border-radius:7px;background:#173B49;color:#fff;padding:10px 18px;box-shadow:none;}
+  .winter-intro-cta:hover{background:#28596A;transform:none;}
+  .winter-intro-note{margin-top:9px;color:#6D7E82;}
+  .winter-intro-video{width:180px;aspect-ratio:9/16;flex:0 0 auto;margin-inline-start:clamp(24px,6vw,90px);border:5px solid #fff;border-radius:14px;object-fit:cover;box-shadow:0 14px 30px rgba(18,48,58,.18);background:#DCE4E5;}
+  .winter-hub{margin:18px 5vw 24px;padding:22px;background:#fff;color:#173B49;border:1px solid #DCE4E5;border-radius:12px;box-shadow:0 7px 18px rgba(18,48,58,.06);}
+  .winter-hub-kicker{color:#A06D18;letter-spacing:1.5px;}
+  .winter-hub h2{font-size:clamp(23px,3vw,36px);}
+  .winter-hub-copy p{color:#5B6F74;}
+  .winter-hub-actions button{border-radius:7px;background:#173B49;color:#fff;}
+  .winter-hub-actions button.alt{color:#173B49;border-color:#B9CBCD;background:#fff;}
+  .winter-hub-panel{padding:16px;border-color:#DCE4E5;background:#F4F7F6;}
+  .winter-hub-panel h3{color:#173B49;}
+  .season-countdown div{background:#fff;border-color:#DCE4E5;}
+  .season-countdown b{color:#A06D18;}
+  .season-countdown span{color:#6D7E82;}
+  .season-choices{margin-top:0;}
+  .season-choice{border-color:#DCE4E5;box-shadow:none;}
+  .season-choice:hover{border-color:#A06D18;box-shadow:0 8px 18px rgba(18,48,58,.08);}
+  .season-choice b{color:#173B49;}
+  .season-choice i{color:#A06D18;}
+  body.winter-season-mode .promo-carousel{border-radius:12px;box-shadow:0 8px 22px rgba(18,48,58,.08);}
+  body.winter-season-mode .winter-offer{border-radius:12px;background:#173B49;box-shadow:0 10px 24px rgba(18,48,58,.12);}
+  body.winter-season-mode .card{border-color:#DCE4E5;border-radius:10px;box-shadow:0 3px 12px rgba(18,48,58,.04);}
+  body.winter-season-mode .card:hover{box-shadow:0 12px 24px rgba(18,48,58,.1);}
+  body.winter-season-mode .card-badge{background:#173B49;}
+  @media (max-width:760px){
+    .winter-intro{min-height:300px;padding:0 5vw;}
+    .winter-intro-content{padding:28px 0;}
+    .winter-intro h1{font-size:28px;}
+    .winter-intro-video{width:min(190px,62vw);margin:0 auto 26px;}
   }
 </style>
 </head>
@@ -282,6 +568,7 @@
       <img src="logo.png" alt="Electro AK" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <svg style="display:none;" viewBox="0 0 24 24" fill="none" stroke="#17181A" stroke-width="1.6"><path d="M9 2h6l1 6h-8l1-6z"/><path d="M8 8c0 4 1.5 6 1.5 6h5S16 12 16 8"/><path d="M10.5 14h3l.8 4h-4.6l.8-4z"/></svg>
     </div>
+    <div class="brand-label" aria-label="Decor Light">Decor <span>|</span> Light</div>
   </div>
   <div class="nav-links">
     <a href="#collection" class="active" onclick="setCategory('الكل');return false;">جميع المنتجات</a>
@@ -307,8 +594,57 @@
   </div>
 </nav>
 
+<div class="season-announcement" id="seasonAnnouncement">
+  <strong>WINTER EVENT 2026</strong>
+  <span>اختيارات الشتاء متاحة لفترة محدودة</span>
+  <button onclick="document.getElementById('winterHub').scrollIntoView({behavior:'smooth'})">اكتشف الموسم</button>
+</div>
+
+<section class="winter-intro" id="winterIntro">
+  <div class="winter-intro-content">
+    <span class="winter-welcome-mark">أجواء خاصة، اختيارات محدودة</span>
+    <span class="winter-intro-kicker">LIMITED WINTER EDITION</span>
+    <h1>مرحبًا بك في العروض الشتوية</h1>
+    <p>تفاصيل دافئة، إضاءة أجمل، واختيارات صُممت لتمنح منزلك أجواءً مختلفة هذا الموسم.</p>
+    <button class="winter-intro-cta" onclick="document.getElementById('winterOffer').scrollIntoView({behavior:'smooth'})">اكتشف العروض الآن</button>
+    <span class="winter-intro-note">عروض خاصة لفترة محدودة</span>
+  </div>
+  <video class="winter-intro-video" src="1826325910_pin.mp4" autoplay muted loop playsinline aria-label="فيديو ريلز صامت للعروض الشتوية"></video>
+</section>
+
+<section class="winter-hub" id="winterHub">
+  <div class="winter-hub-copy">
+    <span class="winter-hub-kicker">HOME / WINTER COLLECTION</span>
+    <h2>الشتاء أجمل مع إضاءة تكمّل تفاصيل حوشك</h2>
+    <p>اكتشف تشكيلتنا من الإنارة والديكور، واختر الأجواء التي تناسب مساحتك</p>
+    <div class="winter-hub-actions">
+      <button onclick="setSeasonChoice('الكل')">تسوق المجموعة</button>
+      <button class="alt" onclick="document.getElementById('winterOffer').scrollIntoView({behavior:'smooth'})">العروض المحدودة</button>
+    </div>
+  </div>
+  <div class="winter-hub-panel">
+    <h3>ينتهي الموسم في 1 ديسمبر</h3>
+    <div class="season-countdown" aria-label="الوقت المتبقي للموسم">
+      <div><b id="seasonDays">00</b><span>يوم</span></div>
+      <div><b id="seasonHours">00</b><span>ساعة</span></div>
+      <div><b id="seasonMinutes">00</b><span>دقيقة</span></div>
+      <div><b id="seasonSeconds">00</b><span>ثانية</span></div>
+    </div>
+    <span style="color:#A9BDC0;font-size:11px;line-height:1.6;">عروض الموسم تتغير باستمرار. أضف اختيارك للسلة وأكمل الطلب عبر واتساب.</span>
+  </div>
+</section>
+
 <!-- سلايدر ترويجي متحرك تلقائياً (صور فقط)، والنص فوقه ثابت. عدّل الصور من PROMO_IMAGES والنص من PROMO_HERO أسفل الملف -->
 <div class="promo-carousel" id="promoCarousel"></div>
+
+<section class="winter-offer" id="winterOffer">
+  <div class="winter-offer-head">
+    <span class="winter-offer-kicker">LIMITED WINTER EDITION</span>
+    <h2>مجموعة عروض الشتاء</h2>
+    <p class="winter-offer-subtitle">عروض خاصة لفترة محدودة</p>
+  </div>
+  <div class="winter-offer-grid" id="winterOfferGrid"></div>
+</section>
 
 <div class="toolbar" id="collection">
   <div class="count">إجمالي <b id="productCount">0</b> منتج</div>
@@ -330,6 +666,8 @@
     <div class="empty-state">جارِ تحميل المنتجات...</div>
   </div>
 </section>
+
+<main class="detail-page" id="detailPage" hidden></main>
 
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-drawer" id="cartDrawer">
@@ -360,7 +698,7 @@
    - PROMO_IMAGES: الصور اللي تتحرك وتتبدّل تلقائياً بالخلفية.
    - PROMO_HERO: النص الثابت اللي يبقى ظاهر فوق الصور طول الوقت.
    ================================================================== */
-const PROMO_IMAGES = ['promo-3.jpg', 'promo-side.jpg'];
+const PROMO_IMAGES = ['promoo.jpeg', 'M2.jpeg', 'promo-3.jpg'];
 const PROMO_HERO = {
   pretitle: 'إلى منزل تشعر أنه صُنع لك بالضبط',
   title: 'هدفنا تغيير منزلك للأفضل',
@@ -416,16 +754,18 @@ const PRODUCTS = [
     description: 'إضاءة LED ذكية بثلاث درجات إضاءة قابلة للتبديل، مزوّدة بمستشعر حركة تلقائي يضيء عند اقترابك، وشحن عبر منفذ Type-C دون الحاجة لأي أسلاك دائمة.',
     image: 'led-1.jpg',
     category: 'إنارة',
-    badge: '',
+    badge: 'قريبًا',
+    comingSoon: true,
+    winterReleaseLabel: 'موعد العرض: 15-10-2026',
     active: true
   },
   {
     id: '2',
     name: 'لد للمطبخ',
-    price: 79,
-    oldPrice: 99,
+    price: 59,
+    oldPrice: 75,
     description: 'شريط إضاءة LED عملي مخصص لتحت خزائن المطبخ، يمنح إضاءة قوية وواضحة لمساحة العمل والتحضير، سهل التركيب وبعمر تشغيل طويل.',
-    image: 'promo-4.jpg',
+    image: 'Led-G.jpeg',
     category: 'إنارة',
     badge: 'الكمية محدودة',
     active: true
@@ -507,7 +847,6 @@ const PRODUCTS = [
     description: 'ثريا مميزة بتصميم أنيق ووظائف متقدمة.',
     image: 'promo-8.jpg',
     category: 'ثريا',
-    badge: 'شائع',
     active: true
   },
   {
@@ -519,8 +858,73 @@ const PRODUCTS = [
     category: 'ثريا',
     badge: 'الأكثر طلباً',
     active: true
+  },
+  {
+    id: '12',
+    name: 'مصباح جداري ذكي',
+    price: 0,
+    description: 'إضاءة ذكية تجمع بين الأناقة والعملية. يعمل مستشعر الحركة تلقائيًا عند اقترابك، بينما يمنح التصميم المضيء إضاءة دافئة وأجواء راقية في كل زاوية من منزلك',
+    image: 'decor93.webp',
+    category: 'إنارة',
+    badge: 'قريبًا',
+    comingSoon: true,
+    featured: true,
+    video: 'v2.mp4',
+    active: true
+  },
+  {
+    id: '13',
+    name: 'قطعة ديكور جديدة',
+    price: 0,
+    description: 'قطعة ديكور مختارة بعناية ستتم إضافتها قريبًا. يمكنك استبدال بيانات هذا المنتج ببيانات منتجك القادم.',
+    image: 'promo13.jpeg',
+    category: 'ديكور',
+    badge: 'قريبًا',
+    comingSoon: true,
+    winterReleaseLabel: 'قريبًا هذا الموسم',
+    video: 'v1.mp4',
+    active: true
+  },
+  {
+    id: '14',
+    name: 'إضاءة بالطاقة الشمسية',
+    price: 45,
+    description: 'إضاءة عملية وأنيقة تعمل بالطاقة الشمسية، تمنحك إنارة مريحة للمداخل والحدائق والشرفات دون الحاجة إلى أسلاك أو استهلاك كهرباء.',
+    image: 'promo-1-7.jpeg',
+    category: 'إنارة',
+    badge: 'قريبًا',
+    comingSoon: true,
+    winterReleaseLabel: 'موعد العرض: 15-10-2026',
+    active: true
+  },
+  {
+    id: '15',
+    name: 'ملصقات Electro',
+    price: 25,
+    description: 'ملصقات Electro بتصميم أنيق، مناسبة للأجهزة والدفاتر والتغليف وتمنح لمسة خاصة لهوية متجرك.',
+    image: 'm1.jpeg',
+    category: 'إكسسوارات',
+    badge: 'جديد',
+    active: true
   }
 ];
+
+const WINTER_PRODUCT_IDS = ['1', '2', '13', '14'];
+
+// يظهر الهيكل الشتوي مؤقتاً من تاريخ اليوم وحتى بداية ديسمبر.
+const WINTER_SEASON = {
+  start: '2026-09-23',
+  end: '2026-12-01'
+};
+
+function isWinterSeason(date = new Date()){
+  const current = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const start = new Date(WINTER_SEASON.start + 'T00:00:00');
+  const end = new Date(WINTER_SEASON.end + 'T00:00:00');
+  return current >= start && current < end;
+}
+
+const winterSeasonActive = isWinterSeason();
 
 // رقم الواتساب بصيغة دولية بدون + أو أصفار في البداية (مثال: 218912345678)
 const WHATSAPP_NUMBER = '218919547085';
@@ -530,7 +934,9 @@ let activeCategory = 'الكل';
 let searchTerm = '';
 let cart = {}; // { productId: qty }
 let wishlist = new Set();
+let winterReminders = new Set();
 let showingWishlistOnly = false;
+let detailQty = 1;
 
 const placeholderIcon = `
   <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" xmlns="http://www.w3.org/2000/svg">
@@ -575,6 +981,9 @@ function setCategory(c){
   renderGrid();
   document.getElementById('collection').scrollIntoView({behavior:'smooth'});
 }
+function setSeasonChoice(category){
+  setCategory(category);
+}
 function toggleWishlistView(){
   showingWishlistOnly = !showingWishlistOnly;
   renderGrid();
@@ -588,15 +997,185 @@ function toggleWishlist(id, e){
   renderGrid();
 }
 
+function openProduct(id){
+  window.location.href = '?product=' + encodeURIComponent(id);
+}
+
+function renderProductDetails(product){
+  const detail = document.getElementById('detailPage');
+  const showWinterDetails = winterSeasonActive && WINTER_PRODUCT_IDS.includes(String(product.id));
+  document.body.classList.add('detail-mode');
+  detailQty = 1;
+  document.title = product.name + ' | Electro AK';
+  detail.hidden = false;
+  document.querySelector('.winter-intro').style.display = 'none';
+  document.querySelector('.season-announcement').style.display = 'none';
+  document.querySelector('.winter-hub').style.display = 'none';
+  document.querySelector('.promo-carousel').style.display = 'none';
+  document.querySelector('.winter-offer').style.display = 'none';
+  document.querySelector('.toolbar').style.display = 'none';
+  document.querySelector('.filters').style.display = 'none';
+  document.querySelector('.section').style.display = 'none';
+  detail.innerHTML = `
+    <a class="back-link" href="index.html#collection">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      العودة إلى المنتجات
+    </a>
+    ${showWinterDetails ? `<div class="winter-snow" aria-hidden="true">${Array.from({length:68}, (_, index) => `<i style="--snow-left:${(index * 37) % 100}%;--snow-size:${(4 + (index % 5) * 1.5).toFixed(1)}px;--snow-delay:${(index % 13) * -0.42}s;--snow-duration:${(5.5 + (index % 7) * 0.65).toFixed(2)}s;--snow-drift:${(-70 + (index % 9) * 18)}px"></i>`).join('')}</div>` : ''}
+    ${showWinterDetails ? '<div class="winter-detail-banner" aria-label="رسائل عروض الشتاء"><div class="winter-detail-track"><span>شتائك معنا غير</span><span>دفء وأناقة في كل زاوية</span><span>اختيارات شتوية بلمسة فاخرة</span><span>عروض محدودة لهذا الموسم</span><span>شتائك معنا غير</span><span>دفء وأناقة في كل زاوية</span></div></div>' : ''}
+    ${showWinterDetails ? '<section class="winter-activity" aria-label="فعاليات عروض الشتاء"><div class="winter-activity-status"><i></i> فعالية الشتاء مستمرة</div><div class="winter-activity-message" id="winterActivityMessage">اكتشف القطعة التي تمنح منزلك دفئًا وأناقة هذا الموسم.</div><div class="winter-activity-items"><button class="active" onclick="setWinterActivity(this, \'اكتشفنا لك اختيارات تضيف أجواءً دافئة إلى كل زاوية.\')">دفء الموسم</button><button onclick="setWinterActivity(this, \'عرض خاص لفترة محدودة، والكمية متاحة الآن.\')">مفاجأة العرض</button><button onclick="setWinterActivity(this, \'إضاءة أجمل وتفاصيل أرقى لتجربة شتوية مختلفة.\')">تجربة الإضاءة</button></div><div class="winter-activity-progress" aria-hidden="true"><span></span></div></section>' : ''}
+    <div class="detail-layout">
+      <div class="detail-media">
+        ${product.image ? `<img src="${escapeAttr(product.image)}" alt="${escapeAttr(product.name)}">` : placeholderIcon}
+        ${product.comingSoon ? '<div class="card-badge">قريبًا</div>' : ''}
+      </div>
+      <div class="detail-copy">
+        ${product.comingSoon ? '<div class="coming-soon-note">هذا المنتج سيتوفر قريبًا</div>' : ''}
+        ${product.category ? `<div class="detail-category">${escapeHtml(product.category)}</div>` : ''}
+        <h1>${escapeHtml(product.name)}</h1>
+        <p class="detail-description">${escapeHtml(product.description || '')}</p>
+        ${product.comingSoon ? '<div class="coming-soon-note">السعر والتوفر يعلنان عند الإطلاق</div>' : `<div class="detail-price">${money(product.price)}</div><div class="detail-actions"><div class="detail-qty"><button onclick="changeDetailQty(-1)" aria-label="إنقاص الكمية">−</button><span id="detailQty">1</span><button onclick="changeDetailQty(1)" aria-label="زيادة الكمية">+</button></div><button class="add-btn" onclick="addDetailToCart('${escapeAttr(product.id)}')">+ أضف للسلة</button><button class="detail-wish ${wishlist.has(String(product.id)) ? 'active' : ''}" onclick="toggleDetailWishlist('${escapeAttr(product.id)}', this)" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="${wishlist.has(String(product.id)) ? 'currentColor' : 'none'}" stroke-width="1.8"><path d="M12 21s-7-4.6-9.5-9C.8 8.6 2.6 5 6 5c2 0 3.4 1.1 4 2.2C10.6 6.1 12 5 14 5c3.4 0 5.2 3.6 3.5 7-2.5 4.4-9.5 9-9.5 9z"/></svg></button><button class="detail-share" onclick="shareProduct('${escapeAttr(product.id)}')" aria-label="مشاركة المنتج"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.5-4.3M8.2 13.2l7.5 4.3"/></svg></button></div>`}
+        <div class="detail-perks"><div class="detail-perk"><strong>شحن سريع</strong>تجهيز أنيق وآمن لطلبك</div><div class="detail-perk"><strong>جودة مختارة</strong>منتجات تضيف فرقًا حقيقيًا</div><div class="detail-perk"><strong>دعم مباشر</strong>تواصل معنا عبر واتساب</div></div>
+      </div>
+    </div>
+    <section class="detail-video">
+      <h2>فيديو المنتج</h2>
+      ${product.video ? `<video controls playsinline preload="metadata" poster="${escapeAttr(product.image || '')}"><source src="${escapeAttr(product.video)}" type="video/mp4">متصفحك لا يدعم تشغيل الفيديو.</video>` : '<div class="video-empty">أضف مسار الفيديو في خاصية <b>video</b> داخل بيانات المنتج ليظهر هنا.</div>'}
+    </section>`;
+    if(showWinterDetails){
+      detail.insertAdjacentHTML('beforeend', renderWinterExtras(product));
+      startWinterCountdown();
+    }
+}
+
+function renderWinterExtras(product){
+  const related = WINTER_PRODUCT_IDS
+    .map(id => allProducts.find(item => String(item.id) === id))
+    .filter(item => item && String(item.id) !== String(product.id));
+  const relatedHtml = related.map(item => `<article class="winter-related-card" onclick="openProduct('${escapeAttr(item.id)}')"><img src="${escapeAttr(item.image || '')}" alt=""><div><b>${escapeHtml(item.name)}</b><span>${money(item.price)}</span></div></article>`).join('');
+  return `<section class="winter-lower" aria-label="تفاصيل العرض الشتوي">
+    <div class="winter-deal-strip"><div class="winter-deal-label">عرض الشتاء الخاص<small>ينتهي العرض خلال شهرين</small></div><div class="winter-countdown" aria-label="الوقت المتبقي"><b id="countdownDays">60</b><span>:</span><b id="countdownHours">00</b><span>:</span><b id="countdownMinutes">00</b><span>:</span><b id="countdownSeconds">00</b></div></div>
+    <div class="winter-benefits"><div class="winter-benefit"><b>شحن وتجهيز سريع</b><span>نجهز طلبك بعناية ليصل بأفضل حالة.</span></div><div class="winter-benefit"><b>اختيار موسمي محدود</b><span>قطع مختارة خصيصًا لأجواء الشتاء.</span></div><div class="winter-benefit"><b>اطلب بسهولة</b><span>أضف للسلة وأكمل طلبك عبر واتساب.</span></div></div>
+    <div class="winter-accordion"><button onclick="toggleWinterPanel(this)">تفاصيل المنتج والعرض</button><p>هذا المنتج جزء من مجموعة عروض الشتاء المحدودة. السعر الظاهر هو السعر الحالي للعرض، وقد تتغير الكمية المتاحة خلال الموسم.</p><button onclick="toggleWinterPanel(this)">الشحن والاستبدال</button><p>تواصل معنا عبر واتساب لتأكيد العنوان وتفاصيل التوصيل قبل تجهيز الطلب.</p><button onclick="toggleWinterPanel(this)">لماذا هذا الاختيار؟</button><p>لأنه يجمع بين الاستخدام اليومي والتصميم الأنيق، ويضيف لمسة دافئة للمكان دون تعقيد.</p></div>
+    ${relatedHtml ? `<div class="winter-related"><h2>قد يناسبك أيضًا</h2><div class="winter-related-grid">${relatedHtml}</div></div>` : ''}
+    <div class="winter-buy-bar"><div><strong>${escapeHtml(product.name)}</strong><span>${money(product.price)}</span></div><button onclick="addDetailToCart('${escapeAttr(product.id)}')">أضف للسلة</button></div>
+  </section>`;
+}
+
+let winterCountdownEnd = Date.now() + 60 * 24 * 60 * 60 * 1000;
+let winterCountdownTimer;
+function startWinterCountdown(){
+  clearInterval(winterCountdownTimer);
+  const update = ()=>{
+    const remaining = Math.max(0, winterCountdownEnd - Date.now());
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+    const hourBox = document.getElementById('countdownHours');
+    if(!hourBox) return clearInterval(winterCountdownTimer);
+    document.getElementById('countdownDays').textContent = String(days).padStart(2, '0');
+    hourBox.textContent = String(hours).padStart(2, '0');
+    document.getElementById('countdownMinutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('countdownSeconds').textContent = String(seconds).padStart(2, '0');
+  };
+  update();
+  winterCountdownTimer = setInterval(update, 1000);
+}
+function toggleWinterPanel(button){
+  const panel = button.nextElementSibling;
+  const wasOpen = button.classList.contains('open');
+  document.querySelectorAll('.winter-accordion button').forEach(item => item.classList.remove('open'));
+  document.querySelectorAll('.winter-accordion p').forEach(item => item.classList.remove('open'));
+  if(!wasOpen){ button.classList.add('open'); panel.classList.add('open'); }
+}
+
+function setWinterActivity(button, message){
+  document.querySelectorAll('.winter-activity-items button').forEach(item => item.classList.remove('active'));
+  button.classList.add('active');
+  const messageBox = document.getElementById('winterActivityMessage');
+  if(messageBox){
+    messageBox.style.opacity = '0';
+    setTimeout(()=>{
+      messageBox.textContent = message;
+      messageBox.style.opacity = '1';
+    }, 140);
+  }
+}
+
+function changeDetailQty(delta){
+  detailQty = Math.max(1, detailQty + delta);
+  const counter = document.getElementById('detailQty');
+  if(counter) counter.textContent = detailQty;
+}
+function addDetailToCart(id){
+  for(let i = 0; i < detailQty; i++) addToCart(id);
+  const button = document.querySelector('.detail-actions .add-btn');
+  if(button){ button.textContent = 'تمت الإضافة'; setTimeout(()=>button.textContent = '+ أضف للسلة', 1400); }
+}
+function toggleDetailWishlist(id, button){
+  if(wishlist.has(String(id))) wishlist.delete(String(id)); else wishlist.add(String(id));
+  button.classList.toggle('active', wishlist.has(String(id)));
+  const icon = button.querySelector('svg');
+  if(icon) icon.setAttribute('fill', wishlist.has(String(id)) ? 'currentColor' : 'none');
+}
+function shareProduct(id){
+  const url = window.location.href;
+  if(navigator.share) navigator.share({title: document.title, url}).catch(()=>{});
+  else if(navigator.clipboard){ navigator.clipboard.writeText(url); alert('تم نسخ رابط المنتج'); }
+}
+
+function toggleWinterReminder(id, event){
+  event?.stopPropagation();
+  const key = String(id);
+  if(winterReminders.has(key)) winterReminders.delete(key);
+  else winterReminders.add(key);
+  renderWinterOffer();
+}
+
+function renderWinterOffer(){
+  const grid = document.getElementById('winterOfferGrid');
+  const products = WINTER_PRODUCT_IDS
+    .map(id => allProducts.find(product => String(product.id) === id))
+    .filter(Boolean);
+
+  grid.innerHTML = products.map(product => {
+    const id = String(product.id);
+    const inCart = cart[id] > 0;
+    const reminderActive = winterReminders.has(id);
+    const comingSoon = Boolean(product.comingSoon);
+    const offerAction = comingSoon
+      ? `<button class="winter-add-btn reminder ${reminderActive ? 'active' : ''}" onclick="toggleWinterReminder('${escapeAttr(id)}', event)">${reminderActive ? 'تم التذكير' : 'ذكّرني عند الإطلاق'}</button>`
+      : `<button class="winter-add-btn ${inCart ? 'added' : ''}" onclick="addToCart('${escapeAttr(id)}', event)">${inCart ? 'أُضيف' : 'أضف للسلة'}</button>`;
+    return `
+      <article class="winter-product" onclick="openProduct('${escapeAttr(id)}')" role="link" tabindex="0" onkeydown="if(event.key==='Enter') openProduct('${escapeAttr(id)}')">
+        <div class="winter-product-media">
+          ${product.image ? `<img src="${escapeAttr(product.image)}" alt="${escapeAttr(product.name)}" loading="lazy">` : placeholderIcon}
+        </div>
+        <div class="winter-product-info">
+          <div class="winter-product-category">${escapeHtml(product.category || 'منتج مميز')}</div>
+          <div class="winter-product-name">${escapeHtml(product.name)}</div>
+          <div class="winter-product-description">${escapeHtml(product.description || '')}</div>
+          ${comingSoon ? `<div class="winter-release">${escapeHtml(product.winterReleaseLabel || 'قريبًا')}</div>` : ''}
+          <div class="winter-product-foot">
+            <div class="winter-product-price">${money(product.price)} ${product.oldPrice ? `<span class="winter-product-old-price">${money(product.oldPrice)}</span>` : ''}</div>
+            ${offerAction}
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+}
+
 /* ---------- Grid ---------- */
 function renderGrid(){
   const grid = document.getElementById('productGrid');
   let list = allProducts.filter(p => {
     const isActive = String(p.active).toLowerCase() !== 'false' && String(p.active) !== '0';
+    const isWinterOnly = winterSeasonActive && WINTER_PRODUCT_IDS.includes(String(p.id));
     const matchCat = activeCategory === 'الكل' || p.category === activeCategory;
     const matchSearch = !searchTerm || (p.name||'').toLowerCase().includes(searchTerm) || (p.description||'').toLowerCase().includes(searchTerm);
     const matchWish = !showingWishlistOnly || wishlist.has(String(p.id));
-    return isActive && matchCat && matchSearch && matchWish;
+    return isActive && !isWinterOnly && matchCat && matchSearch && matchWish;
   });
 
   const sort = document.getElementById('sortSelect').value;
@@ -604,6 +1183,9 @@ function renderGrid(){
   else if(sort === 'price_desc') list = [...list].sort((a,b)=>(Number(b.price)||0)-(Number(a.price)||0));
   else if(sort === 'newest') list = [...list].sort((a,b)=> String(a.id).localeCompare(String(b.id)));
   else list = [...list];
+  const featuredProducts = list.filter(product => product.featured);
+  const regularProducts = list.filter(product => !product.featured);
+  list = [...featuredProducts, ...regularProducts];
 
   document.getElementById('productCount').textContent = list.length;
 
@@ -617,7 +1199,7 @@ function renderGrid(){
     const isWished = wishlist.has(id);
     const inCart = cart[id] > 0;
     return `
-    <div class="card">
+    <div class="card ${p.featured ? 'featured-product' : ''}" onclick="openProduct('${escapeAttr(id)}')" role="link" tabindex="0" onkeydown="if(event.key==='Enter') openProduct('${escapeAttr(id)}')">
       <div class="card-media">
         ${p.image ? `<img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.name)}" loading="lazy">` : placeholderIcon}
         ${p.badge ? `<div class="card-badge">${escapeHtml(p.badge)}</div>` : ''}
@@ -631,11 +1213,12 @@ function renderGrid(){
         <div class="card-desc">${escapeHtml(p.description || '')}</div>
         <div class="card-foot">
           <div class="card-price-row">
-            ${p.oldPrice ? `<span class="card-old-price">${money(p.oldPrice)}</span>` : ''}
-            <span class="card-price">${money(p.price)}</span>
+            ${p.comingSoon
+              ? '<span class="coming-soon-promo">قريبًا... ترقبوا الإطلاق</span>'
+              : `${p.oldPrice ? `<span class="card-old-price">${money(p.oldPrice)}</span>` : ''}<span class="card-price">${money(p.price)}</span>`}
           </div>
-          <button class="add-btn ${inCart?'added':''}" onclick="addToCart('${id}')">
-            ${inCart ? 'أُضيف (' + cart[id] + ')' : '+ أضف للسلة'}
+          <button class="add-btn ${inCart?'added':''}" onclick="addToCart('${id}', event)" ${p.comingSoon ? 'disabled' : ''}>
+            ${p.comingSoon ? 'قريبًا' : (inCart ? 'أُضيف (' + cart[id] + ')' : '+ أضف للسلة')}
           </button>
         </div>
       </div>
@@ -644,10 +1227,14 @@ function renderGrid(){
 }
 
 /* ---------- Cart ---------- */
-function addToCart(id){
+function addToCart(id, e){
+  e?.stopPropagation();
+  const product = allProducts.find(p => String(p.id) === String(id));
+  if(!product || product.comingSoon) return;
   cart[id] = (cart[id] || 0) + 1;
   updateCartBadge();
   renderGrid();
+  renderWinterOffer();
   renderCart();
 }
 function changeQty(id, delta){
@@ -655,12 +1242,14 @@ function changeQty(id, delta){
   if(cart[id] <= 0) delete cart[id];
   updateCartBadge();
   renderGrid();
+  renderWinterOffer();
   renderCart();
 }
 function removeFromCart(id){
   delete cart[id];
   updateCartBadge();
   renderGrid();
+  renderWinterOffer();
   renderCart();
 }
 function updateCartBadge(){
@@ -730,9 +1319,52 @@ function checkoutWhatsapp(){
   window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
 }
 
+function startSeasonCountdown(){
+  const end = new Date(WINTER_SEASON.end + 'T00:00:00').getTime();
+  const update = ()=>{
+    const remaining = Math.max(0, end - Date.now());
+    const values = [
+      Math.floor(remaining / 86400000),
+      Math.floor((remaining % 86400000) / 3600000),
+      Math.floor((remaining % 3600000) / 60000),
+      Math.floor((remaining % 60000) / 1000)
+    ];
+    ['seasonDays','seasonHours','seasonMinutes','seasonSeconds'].forEach((id, index)=>{
+      const element = document.getElementById(id);
+      if(element) element.textContent = String(values[index]).padStart(2, '0');
+    });
+  };
+  update();
+  setInterval(update, 1000);
+}
+
 /* ---------- Load ---------- */
 function loadProducts(){
+  document.body.classList.toggle('winter-season-mode', winterSeasonActive);
+  const seasonalSections = [
+    document.getElementById('seasonAnnouncement'),
+    document.getElementById('winterIntro'),
+    document.getElementById('winterHub'),
+    document.getElementById('seasonChoices'),
+    document.getElementById('winterOffer')
+  ];
+  seasonalSections.forEach(section => {
+    if(!section) return;
+    section.hidden = !winterSeasonActive;
+    section.style.display = winterSeasonActive ? '' : 'none';
+  });
+
+  const productId = new URLSearchParams(window.location.search).get('product');
+  const product = allProducts.find(p => String(p.id) === String(productId));
+  if(product){
+    renderProductDetails(product);
+    return;
+  }
   renderFilters();
+  if(winterSeasonActive){
+    renderWinterOffer();
+    startSeasonCountdown();
+  }
   renderGrid();
 }
 
