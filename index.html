@@ -71,6 +71,13 @@
   .search-box.open{display:flex;}
   .search-box svg{width:15px;height:15px;stroke:var(--muted);flex-shrink:0;}
 
+  @media (max-width:640px){
+    .nav{padding:12px 5vw;gap:8px;}
+    .brand{width:100%;justify-content:center;}
+    .nav-icons{order:2;width:100%;justify-content:center;}
+    .nav-links{order:3;width:100%;justify-content:center;gap:16px;}
+  }
+
   /* ---------- Promo carousel (hero style) ---------- */
   .promo-carousel{
     position:relative;
@@ -698,7 +705,7 @@
    - PROMO_IMAGES: الصور اللي تتحرك وتتبدّل تلقائياً بالخلفية.
    - PROMO_HERO: النص الثابت اللي يبقى ظاهر فوق الصور طول الوقت.
    ================================================================== */
-const PROMO_IMAGES = ['promoo.jpeg', 'M2.jpeg', 'promo-3.jpg'];
+const PROMO_IMAGES = ['m1.jpeg', 'm2.jpeg', 'promo-3.jpg'];
 const PROMO_HERO = {
   pretitle: 'إلى منزل تشعر أنه صُنع لك بالضبط',
   title: 'هدفنا تغيير منزلك للأفضل',
