@@ -72,13 +72,21 @@
   .search-box svg{width:15px;height:15px;stroke:var(--muted);flex-shrink:0;}
 
   @media (max-width:640px){
-    .nav{padding:12px 5vw;gap:8px;}
-    .brand{width:100%;justify-content:center;}
-    .nav-icons{order:2;width:100%;justify-content:center;}
-    .nav-links{order:3;width:100%;justify-content:center;gap:16px;}
+    .nav{display:grid;grid-template-columns:36px minmax(0,1fr) auto;padding:6px 3vw;gap:5px;flex-wrap:nowrap;}
+    .brand{width:36px;justify-content:center;gap:0;}
+    .brand-mark{width:36px;height:32px;}
+    .brand-mark img{max-width:100%;}
+    .brand-label,.lang-toggle{display:none;}
+    .nav-links{display:flex;width:auto;min-width:0;justify-content:center;gap:6px;font-size:10px;white-space:nowrap;}
+    .nav-links a{padding:5px 0;}
+    .nav-icons{grid-column:auto;order:0;width:auto;justify-content:flex-end;gap:2px;position:relative;}
+    .nav-icons .icon-btn{width:29px;height:32px;}
+    .search-box.open{position:absolute;top:calc(100% + 6px);right:0;z-index:2;box-shadow:0 4px 14px rgba(0,0,0,.12);}
   }
 
   /* ---------- Promo carousel (hero style) ---------- */
+  .site-hero-image{width:100%;margin:0;overflow:hidden;}
+  .site-hero-image img{display:block;width:100%;height:auto;}
   .promo-carousel{
     position:relative;
     margin:20px 5vw 8px;
@@ -150,6 +158,33 @@
 
   @media (max-width:640px){
     .promo-carousel{aspect-ratio:auto;min-height:300px;}
+  }
+
+  .reels-strip{display:grid;grid-template-columns:repeat(3,minmax(0,240px));justify-content:center;gap:14px;margin:18px 5vw 0;}
+  .winter-reels-box{position:relative;isolation:isolate;margin:22px 5vw 0;padding:22px;border:1px solid #49636A;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#173B49,#102833);color:#F7F3E9;box-shadow:0 14px 30px rgba(16,45,56,.15);}
+  .winter-reels-box::before{content:'❄';position:absolute;z-index:-1;top:8px;left:18px;color:rgba(231,201,130,.42);font-size:44px;animation:winterReelDrift 7s ease-in-out infinite;pointer-events:none;}
+  .winter-reels-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px;}
+  .winter-reels-kicker{color:#E7C982;font-size:10px;font-weight:700;letter-spacing:1px;}
+  .winter-reels-head h2{margin:4px 0;font-family:var(--display-font);font-size:21px;line-height:1.4;}
+  .winter-reels-head p{margin:0;color:#C5D3D6;font-size:12px;line-height:1.6;}
+  .winter-reels-status{display:flex;align-items:center;gap:7px;flex-shrink:0;padding:7px 10px;border:1px solid rgba(231,201,130,.48);border-radius:999px;color:#F4D995;font-size:11px;font-weight:700;}
+  .winter-reels-status i{width:7px;height:7px;border-radius:50%;background:#E7C982;box-shadow:0 0 0 4px rgba(231,201,130,.14);animation:winterReelPulse 1.8s ease-in-out infinite;}
+  .reels-strip{position:relative;z-index:1;}
+  .reels-strip video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border:1px solid rgba(231,201,130,.26);border-radius:10px;background:#111;transition:transform .3s ease,border-color .3s ease;}
+  .reels-strip video:hover{transform:translateY(-3px);border-color:#E7C982;}
+  .winter-reels-cta{display:flex;align-items:center;gap:8px;margin:17px auto 0;padding:9px 15px;border:1px solid #E7C982;border-radius:7px;background:#E7C982;color:#12222A;font:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:background .2s ease,transform .2s ease;}
+  .winter-reels-cta:hover{background:#F4D995;transform:translateY(-1px);}
+  @keyframes winterReelDrift{50%{transform:translate(8px,14px) rotate(18deg);opacity:.55;}}
+  @keyframes winterReelPulse{50%{opacity:.5;transform:scale(.75);}}
+  @media (prefers-reduced-motion:reduce){.winter-reels-box::before,.winter-reels-status i{animation:none;}.reels-strip video,.winter-reels-cta{transition:none;}}
+  @media (max-width:640px){
+    .winter-reels-box{margin:16px 4vw 0;padding:15px 10px;}
+    .winter-reels-head{align-items:flex-start;gap:8px;margin-bottom:12px;}
+    .winter-reels-head h2{font-size:17px;}
+    .winter-reels-head p{font-size:10px;}
+    .winter-reels-status{padding:6px 8px;font-size:10px;}
+    .reels-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:0;}
+    .reels-strip video{border-radius:7px;}
   }
 
   /* ---------- Winter offer ---------- */
@@ -442,9 +477,6 @@
   /* ---------- Footer ---------- */
   footer{border-top:1px solid var(--line);padding:36px 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:13px;}
 
-  @media (max-width:760px){
-    .nav-links{display:none;}
-  }
   .winter-intro{position:relative;min-height:310px;margin:0;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:#F8F2E7;background:radial-gradient(circle at 50% 15%,rgba(198,160,87,.24),transparent 24%),linear-gradient(115deg,#08131D 0%,#10283A 48%,#071018 100%);border-bottom:1px solid rgba(215,184,120,.42);isolation:isolate;}
   .winter-intro::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(112deg,transparent 0 58px,rgba(255,255,255,.045) 59px,transparent 60px 118px);opacity:.5;animation:winterAtmosphere 18s linear infinite;z-index:-1;}
   .winter-intro::after{content:'✦   ❄   ✦   ❄   ✦';position:absolute;top:24px;left:50%;width:100%;transform:translateX(-50%);color:rgba(255,255,255,.42);font-size:18px;letter-spacing:28px;white-space:nowrap;animation:winterSparkle 4s ease-in-out infinite;z-index:-1;}
@@ -601,54 +633,32 @@
   </div>
 </nav>
 
-<div class="season-announcement" id="seasonAnnouncement">
-  <strong>WINTER EVENT 2026</strong>
-  <span>اختيارات الشتاء متاحة لفترة محدودة</span>
-  <button onclick="document.getElementById('winterHub').scrollIntoView({behavior:'smooth'})">اكتشف الموسم</button>
+<div class="site-hero-image">
+  <img src="H1.jpeg" alt="واجهة الموقع">
 </div>
-
-<section class="winter-intro" id="winterIntro">
-  <div class="winter-intro-content">
-    <span class="winter-welcome-mark">أجواء خاصة، اختيارات محدودة</span>
-    <span class="winter-intro-kicker">LIMITED WINTER EDITION</span>
-    <h1>مرحبًا بك في العروض الشتوية</h1>
-    <p>تفاصيل دافئة، إضاءة أجمل، واختيارات صُممت لتمنح منزلك أجواءً مختلفة هذا الموسم.</p>
-    <button class="winter-intro-cta" onclick="document.getElementById('winterOffer').scrollIntoView({behavior:'smooth'})">اكتشف العروض الآن</button>
-    <span class="winter-intro-note">عروض خاصة لفترة محدودة</span>
-  </div>
-  <video class="winter-intro-video" src="1826325910_pin.mp4" autoplay muted loop playsinline aria-label="فيديو ريلز صامت للعروض الشتوية"></video>
-</section>
-
-<section class="winter-hub" id="winterHub">
-  <div class="winter-hub-copy">
-    <span class="winter-hub-kicker">HOME / WINTER COLLECTION</span>
-    <h2>الشتاء أجمل مع إضاءة تكمّل تفاصيل حوشك</h2>
-    <p>اكتشف تشكيلتنا من الإنارة والديكور، واختر الأجواء التي تناسب مساحتك</p>
-    <div class="winter-hub-actions">
-      <button onclick="setSeasonChoice('الكل')">تسوق المجموعة</button>
-      <button class="alt" onclick="document.getElementById('winterOffer').scrollIntoView({behavior:'smooth'})">العروض المحدودة</button>
-    </div>
-  </div>
-  <div class="winter-hub-panel">
-    <h3>ينتهي الموسم في 1 ديسمبر</h3>
-    <div class="season-countdown" aria-label="الوقت المتبقي للموسم">
-      <div><b id="seasonDays">00</b><span>يوم</span></div>
-      <div><b id="seasonHours">00</b><span>ساعة</span></div>
-      <div><b id="seasonMinutes">00</b><span>دقيقة</span></div>
-      <div><b id="seasonSeconds">00</b><span>ثانية</span></div>
-    </div>
-    <span style="color:#A9BDC0;font-size:11px;line-height:1.6;">عروض الموسم تتغير باستمرار. أضف اختيارك للسلة وأكمل الطلب عبر واتساب.</span>
-  </div>
-</section>
-
-<!-- سلايدر ترويجي متحرك تلقائياً (صور فقط)، والنص فوقه ثابت. عدّل الصور من PROMO_IMAGES والنص من PROMO_HERO أسفل الملف -->
 <div class="promo-carousel" id="promoCarousel"></div>
 
-<section class="winter-offer" id="winterOffer">
+<section class="winter-reels-box" aria-labelledby="winterReelsTitle">
+  <div class="winter-reels-head">
+    <div>
+      <span class="winter-reels-kicker">WINTER COLLECTION</span>
+      <h2 id="winterReelsTitle">منتجات الشتاء قريبًا</h2>
+      <p>شاهدوا لمحات من اختيارات الموسم القادم</p>
+    </div>
+    <span class="winter-reels-status"><i></i> قريبًا</span>
+  </div>
+  <div class="reels-strip" aria-label="مقاطع الريلز">
+    <video autoplay muted loop playsinline preload="metadata" poster="m1.jpeg" aria-label="مقطع ريلز للعروض"><source src="1826325910_pin.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline preload="metadata" aria-label="مقطع ريلز لإضاءة الجدار"><source src="videoDecor1.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline preload="metadata" poster="promo13.jpeg" aria-label="مقطع ريلز للديكور"><source src="v1.mp4" type="video/mp4"></video>
+  </div>
+  <button class="winter-reels-cta" onclick="document.getElementById('winterOffer').scrollIntoView({behavior:'smooth'})">اكتشف منتجات الشتاء</button>
+</section>
+
+<section class="winter-offer" id="winterOffer" hidden>
   <div class="winter-offer-head">
-    <span class="winter-offer-kicker">LIMITED WINTER EDITION</span>
-    <h2>مجموعة عروض الشتاء</h2>
-    <p class="winter-offer-subtitle">عروض خاصة لفترة محدودة</p>
+    <h2>منتجات الشتاء</h2>
+    <p class="winter-offer-subtitle">اختيارات موسمية لإضاءة منزلك وتفاصيله</p>
   </div>
   <div class="winter-offer-grid" id="winterOfferGrid"></div>
 </section>
@@ -705,9 +715,9 @@
    - PROMO_IMAGES: الصور اللي تتحرك وتتبدّل تلقائياً بالخلفية.
    - PROMO_HERO: النص الثابت اللي يبقى ظاهر فوق الصور طول الوقت.
    ================================================================== */
-const PROMO_IMAGES = ['m1.jpeg', 'm2.jpeg', 'promo-3.jpg'];
+const PROMO_IMAGES = ['m2.jpeg', 'promoo.jpeg', 'promo-3.jpg'];
 const PROMO_HERO = {
-  pretitle: 'إلى منزل تشعر أنه صُنع لك بالضبط',
+  pretitle: 'أهلاً بكم في Electro AK',
   title: 'هدفنا تغيير منزلك للأفضل',
   subtitle: '',
   buttonText: 'تسوّق الآن'
@@ -1015,11 +1025,9 @@ function renderProductDetails(product){
   detailQty = 1;
   document.title = product.name + ' | Electro AK';
   detail.hidden = false;
-  document.querySelector('.winter-intro').style.display = 'none';
-  document.querySelector('.season-announcement').style.display = 'none';
-  document.querySelector('.winter-hub').style.display = 'none';
-  document.querySelector('.promo-carousel').style.display = 'none';
-  document.querySelector('.winter-offer').style.display = 'none';
+  document.querySelectorAll('.promo-carousel, .winter-reels-box, .winter-offer').forEach(section => {
+    section.style.display = 'none';
+  });
   document.querySelector('.toolbar').style.display = 'none';
   document.querySelector('.filters').style.display = 'none';
   document.querySelector('.section').style.display = 'none';
@@ -1142,6 +1150,7 @@ function toggleWinterReminder(id, event){
 
 function renderWinterOffer(){
   const grid = document.getElementById('winterOfferGrid');
+  if(!grid) return;
   const products = WINTER_PRODUCT_IDS
     .map(id => allProducts.find(product => String(product.id) === id))
     .filter(Boolean);
@@ -1347,31 +1356,17 @@ function startSeasonCountdown(){
 
 /* ---------- Load ---------- */
 function loadProducts(){
-  document.body.classList.toggle('winter-season-mode', winterSeasonActive);
-  const seasonalSections = [
-    document.getElementById('seasonAnnouncement'),
-    document.getElementById('winterIntro'),
-    document.getElementById('winterHub'),
-    document.getElementById('seasonChoices'),
-    document.getElementById('winterOffer')
-  ];
-  seasonalSections.forEach(section => {
-    if(!section) return;
-    section.hidden = !winterSeasonActive;
-    section.style.display = winterSeasonActive ? '' : 'none';
-  });
-
   const productId = new URLSearchParams(window.location.search).get('product');
   const product = allProducts.find(p => String(p.id) === String(productId));
   if(product){
     renderProductDetails(product);
     return;
   }
-  renderFilters();
   if(winterSeasonActive){
+    document.getElementById('winterOffer').hidden = false;
     renderWinterOffer();
-    startSeasonCountdown();
   }
+  renderFilters();
   renderGrid();
 }
 
